@@ -26,7 +26,7 @@
 <script>
 /**
  * @file feed流主页面
- * @author yuanxin
+ * @author ld
  */
 import * as components from "../components/items/index";
 import Tab from "../components/tab.vue";

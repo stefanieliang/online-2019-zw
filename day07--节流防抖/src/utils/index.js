@@ -1,6 +1,6 @@
 /**
  * @file 
- * @author yuanxin
+ * @author ld
  */
 import echarts from 'echarts';
 

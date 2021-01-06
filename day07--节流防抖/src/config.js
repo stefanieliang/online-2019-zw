@@ -1,10 +1,10 @@
 /**
  * @file config of project
- * @author yuanxin
+ * @author ld
  */
 
 export const routes = {
-    
+
 };
 
 export const TABS = {

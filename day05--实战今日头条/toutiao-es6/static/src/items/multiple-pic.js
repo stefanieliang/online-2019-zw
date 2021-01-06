@@ -1,6 +1,6 @@
 /**
  * @file 多图的组件
- * @author yuanxin
+ * @author ld
  */
 import Component from './component';
 
@@ -12,7 +12,9 @@ export default class MultiplePic extends Component {
 
 	render() {
 
-		const {data} = this.props;
+		const {
+			data
+		} = this.props;
 
 		const imageList = data.imageList.map(imageUrl => {
 			return `<img src=${imageUrl} />`;

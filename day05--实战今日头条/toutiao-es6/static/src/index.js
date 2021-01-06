@@ -1,6 +1,6 @@
 /**
  * @file 管理全局的入口文件
- * @author yuanxin
+ * @author ld
  */
 import * as utils from './utils';
 import components from './items';
@@ -20,8 +20,8 @@ class Manager {
 
 	getData() {
 		utils.request({
-			url: '/list'
-		})
+				url: '/list'
+			})
 			.then(res => {
 				localStorage.setItem('newsData', JSON.stringify(res));
 				return res;

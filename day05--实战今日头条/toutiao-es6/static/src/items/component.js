@@ -1,6 +1,6 @@
 /**
  * @file 所有模板文件的基类
- * @author yuanxin
+ * @author ld
  */
 
 export default class Component {

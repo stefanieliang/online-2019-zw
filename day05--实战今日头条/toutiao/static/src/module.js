@@ -1,6 +1,6 @@
 /**
  * @file 
- * @author yuanxin
+ * @author ld
  */
 
 (function (context) {
@@ -24,7 +24,7 @@
             this.task.id = this.id;
             return this.task;
         }
-          
+
         enable(deps, factory) {
             this.deps = deps;
             this.factory = factory;

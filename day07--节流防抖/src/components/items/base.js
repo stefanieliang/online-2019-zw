@@ -1,6 +1,6 @@
 /**
  * @file 所有item的基类
- * @author yuanxin
+ * @author ld
  */
 export default {
 
