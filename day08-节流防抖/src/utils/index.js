@@ -5,6 +5,8 @@
 import echarts from 'echarts';
 // let echarts = window.echarts;
 
+// 节流，只执行第一次！后续的全 return。
+// 场景：下拉刷新
 const createThrottle = (fn, delay = 1000) => {
     let status = 'START';
     return () => {
@@ -19,6 +21,8 @@ const createThrottle = (fn, delay = 1000) => {
     };
 };
 
+// 只执行最后一次！ 之前的全 clear。
+// 场景： 搜索输入框
 const createDebounce = (fn, delay = 1000) => {
 
     let timmer = null;

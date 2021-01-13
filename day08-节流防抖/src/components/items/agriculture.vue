@@ -85,6 +85,7 @@ export default {
       fetch(`/price?area=${area}`)
         .then(res => res.json())
         .then(res => {
+          console.log(222, res);
           this.infos = res.infos;
         });
     }

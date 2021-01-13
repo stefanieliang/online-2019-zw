@@ -4,8 +4,8 @@
  */
 
 import Vue from 'vue';
-// import VueRouter from 'vue-router';
-import VueRouter from './vue-fake-router';
+import VueRouter from 'vue-router';
+// import VueRouter from './vue-fake-router';
 import Main from './pages/main.vue';
 import Detail from './pages/detail.vue';
 import Setting from './pages/setting.vue';
@@ -61,3 +61,4 @@ const vm = new Vue({
 		return createElement('router-view');
 	}
 });
+window.vm = vm
