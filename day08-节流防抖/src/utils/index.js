@@ -187,10 +187,12 @@ export const functionalTool = {
             methods: {
 
                 recieveEchartsContext(context) {
+                    console.log('recieveEchartsContext')
                     this.echartsContext = context;
                 },
 
                 draw() {
+                    console.log("draw");
                     const options = this.drawOptions;
                     this.echartsContext.setOption(options);
                 }
@@ -199,8 +201,14 @@ export const functionalTool = {
         });
 
         Vue.directive('echarts', {
+
+            // 被绑定元素插入父节点时调用 (仅保证父节点存在，但不一定已被插入文档中)
             inserted: (el, binding, vnode) => {
+                console.log('directives::', el, binding, vnode)
                 const charts = echarts.init(el);
+
+                // context: Component | void; // rendered in this component's scope
+                // 即：注册的全局组件 echarts ，可从中获取到组件的方法
                 vnode.context.recieveEchartsContext && vnode.context.recieveEchartsContext(charts);
             }
         });

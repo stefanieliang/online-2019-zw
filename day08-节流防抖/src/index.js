@@ -16,7 +16,9 @@ import {
 	reachBottomNotify,
 	functionalTool
 } from './utils';
+import vueEcharts from 'vue-plugin-echarts'
 
+Vue.use(vueEcharts);
 Vue.use(VueRouter);
 Vue.use(reachBottomNotify);
 Vue.use(functionalTool);

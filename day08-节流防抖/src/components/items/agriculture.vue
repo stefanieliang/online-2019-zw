@@ -7,6 +7,8 @@
       <h4>{{ area }}猪肉价格:</h4>
       <span>(测算时间：{{ date() }})</span>
       <echarts v-bind:options="chartsOptions" v-bind:area="area"></echarts>
+      <hr />
+      <Echarts></Echarts>
     </div>
   </div>
 </template>
@@ -16,6 +18,7 @@
  * @file feed流单图item
  * @author ld
  */
+import Echarts from "./Echarts.vue";
 export default {
   data() {
     return {
@@ -23,7 +26,7 @@ export default {
       infos: []
     };
   },
-
+  components: { Echarts },
   created() {
     const debounce = this.createDebounce(area => {
       this.requestPrice(area);
@@ -36,7 +39,6 @@ export default {
 
   computed: {
     chartsOptions() {
-      console.log("tthis.infoshis.infos:", this.infos);
       return {
         tooltip: {},
         legend: {
@@ -83,9 +85,11 @@ export default {
 
     requestPrice(area) {
       fetch(`/price?area=${area}`)
-        .then(res => res.json())
         .then(res => {
-          console.log(222, res);
+          // 这里的 res 是 Response 对象，需要转换成json
+          return res.json();
+        })
+        .then(res => {
           this.infos = res.infos;
         });
     }
