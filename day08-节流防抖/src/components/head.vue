@@ -17,6 +17,7 @@
 
 <script>
 export default {
+  name: "head",
   props: ["tabs"],
   // inject: ['tabs'],
 

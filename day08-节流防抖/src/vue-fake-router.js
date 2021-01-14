@@ -21,6 +21,7 @@ export default class VueRouter {
 
 	static install(Vue, options) {
 
+		let count = 1
 		Vue.mixin({
 			created() {
 				// 自查
@@ -32,21 +33,25 @@ export default class VueRouter {
 				} else {
 					this.$router = this.$parent.$router;
 				}
+				console.log(count++, this instanceof Vue, this)
 			}
 		});
 
 		Vue.component('router-view', {
 
-			functional: true,
+			functional: true, // 函数式组件，只包含一些props，意味它无状态 (没有响应式数据)，也没有实例 (没有 this 上下文)
 
+			// 为了弥补缺少的实例
+			// 提供第二个参数作为上下文
 			render(createElement, {
 				props,
 				children,
 				parent
 			}) {
+				console.log('router-view::parent', parent)
 				const currentHash = location.hash;
 				const router = parent.$router;
-				console.log('$currentHash:', currentHash, router.routes);
+				// console.log('$currentHash:', currentHash, router.routes);
 				const currentRoute = matcher(currentHash, router.routes);
 
 				// this.$parent.$options.router.routes

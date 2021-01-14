@@ -28,6 +28,7 @@
 import Head from "./head.vue";
 
 export default {
+  name: "tab",
   components: {
     "nav-head": Head
   },

@@ -187,12 +187,12 @@ export const functionalTool = {
             methods: {
 
                 recieveEchartsContext(context) {
-                    console.log('recieveEchartsContext')
+                    // console.log('recieveEchartsContext')
                     this.echartsContext = context;
                 },
 
                 draw() {
-                    console.log("draw");
+                    // console.log("draw");
                     const options = this.drawOptions;
                     this.echartsContext.setOption(options);
                 }
@@ -204,7 +204,7 @@ export const functionalTool = {
 
             // 被绑定元素插入父节点时调用 (仅保证父节点存在，但不一定已被插入文档中)
             inserted: (el, binding, vnode) => {
-                console.log('directives::', el, binding, vnode)
+                // console.log('directives::', el, binding, vnode)
                 const charts = echarts.init(el);
 
                 // context: Component | void; // rendered in this component's scope

@@ -38,6 +38,7 @@ const convertPlainObject = obj =>
   Object.keys(obj).reduce((res, key) => ((res[key] = obj[key]), res), {});
 
 export default {
+  name: "main",
   components: {
     Tab,
     Setting,
