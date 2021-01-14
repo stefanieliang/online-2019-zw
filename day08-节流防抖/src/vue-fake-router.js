@@ -91,6 +91,7 @@ const matcher = (path, routesConfig) => {
 class History {
 
 	listen(callback) {
+		// 关键点在于：监听路由哈希变化（hashchange）后，刷新页面
 		window.addEventListener('hashchange', () => {
 			callback && callback(window.location.hash);
 		});
